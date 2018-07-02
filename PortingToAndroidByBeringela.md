@@ -22,14 +22,14 @@ If you're using the latest version of MonoGame, you should find that any Texture
 Solution
 --------
 
-Thanks to the helpful folks [on the MonoGame forums](https://web.archive.org/web/20170513233133/http://monogame.codeplex.com/discussions) (special thanks to SlyGamer, Aranda and Murudai) these issues are all resolvable. To save you trawling through many forum posts to piece this all together, I'm going to summarise their wisdom and demonstrate the solution all here in one place.
+Thanks to the helpful folks [on the MonoGame forums](http://monogame.codeplex.com/discussions) (special thanks to SlyGamer, Aranda and Murudai) these issues are all resolvable. To save you trawling through many forum posts to piece this all together, I'm going to summarise their wisdom and demonstrate the solution all here in one place.
 
 Part 1 - Porting XNA SpriteSheets to MonoGame for Android
 ---------------------------------------------------------
 
-Most of the points I want to cover are all demonstrated in this zip file, which is a port of the [XNA SpriteSheet sample](https://web.archive.org/web/20170513233133/http://xbox.create.msdn.com/en-US/education/catalog/sample/sprite_sheet) to MonoGame for Android. This sample still works for Windows Phone but the main projects have been ported to Android so you can see what changes are needed:
+Most of the points I want to cover are all demonstrated in this zip file, which is a port of the [XNA SpriteSheet sample](http://xbox.create.msdn.com/en-US/education/catalog/sample/sprite_sheet) to MonoGame for Android. This sample still works for Windows Phone but the main projects have been ported to Android so you can see what changes are needed:
 
-**[XNA SpriteSheet sample ported to MonoGame for Android](/web/20170513233133/http://www.pencelgames.com/sites/pencelgames.drupalgardens.com/files/201303/SpriteSheetSampleAndroid.zip)**
+**XNA SpriteSheet sample ported to MonoGame for Android(Link no longer available)**
 
 ### Whats in the Zip file?
 
@@ -41,7 +41,7 @@ In general, I've added an "A" on the end of projects or solutions that are built
 
 1) Note the Assembly name of the SpriteSheetRuntimeA project is still SpriteSheetRuntime. This is necessary so the correct SpriteSheet Reader can be found.
 
-2) You can see that this sample has our own custom SpriteSheetWriter and SpriteSheetReader. (If you need a refresher on the content pipeline [Shawn Hargreaves has some good articles](https://web.archive.org/web/20170513233133/http://blogs.msdn.com/b/shawnhar/archive/2008/11/24/content-pipeline-assemblies.aspx). The custom content writer (class SpriteSheetWriter) is called at Content Build time and embeds the name of our custom content reader (class SpriteSheetReader) in the XNB. The custom Reader has code which handles the reloading of texture assets whilst preserving other data. See the line:
+2) You can see that this sample has our own custom SpriteSheetWriter and SpriteSheetReader. (If you need a refresher on the content pipeline [Shawn Hargreaves has some good articles](http://blogs.msdn.com/b/shawnhar/archive/2008/11/24/content-pipeline-assemblies.aspx). The custom content writer (class SpriteSheetWriter) is called at Content Build time and embeds the name of our custom content reader (class SpriteSheetReader) in the XNB. The custom Reader has code which handles the reloading of texture assets whilst preserving other data. See the line:
 
 if (existingInstance != null)
 
